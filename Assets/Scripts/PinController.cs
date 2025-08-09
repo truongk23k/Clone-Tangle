@@ -19,7 +19,6 @@ public class PinController : MonoBehaviour
     public Selecter selecter; // Tham chiếu Selecter
     public Decider ropeDecider; // Tham chiếu Decider
     public float speed = 5f; // Tốc độ di chuyển
-    public AudioSource audioSource; // Âm thanh khi nhấp
 
     void Start()
     {
@@ -30,7 +29,11 @@ public class PinController : MonoBehaviour
 
         if (selecter == null) Debug.LogError("Selecter not found on Main Camera!");
         if (ropeDecider == null) Debug.LogError("Decider not found on ROPE_DECIDER!");
-        if (audioSource == null) Debug.LogError("AudioSource not assigned!");
+    }
+
+    private void OnMouseDown()
+    {
+        AudioManager.Instance.PlaySFX("pop");
     }
 
     void Update()
@@ -47,6 +50,7 @@ public class PinController : MonoBehaviour
                 isDropping = false;
                 ropeDecider.Dropped();
 
+                AudioManager.Instance.PlaySFX("clickdown");
                 Reset();
             }
         }

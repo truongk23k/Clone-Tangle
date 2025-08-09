@@ -161,7 +161,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Clone-Tangle
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -773,8 +774,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Clone Tangle
-  metroPackageVersion: 
+  metroPackageName: CloneTangle
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -782,7 +783,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Clone Tangle
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Clone Tangle
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

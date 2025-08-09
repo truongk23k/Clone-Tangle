@@ -16,6 +16,9 @@ public class Selecter : MonoBehaviour
 
     void Update()
     {
+        if(UI_Level.Instance.gameState == GameState.Begin)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

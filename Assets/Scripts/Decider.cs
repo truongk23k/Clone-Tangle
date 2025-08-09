@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Decider : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class Decider : MonoBehaviour
     public int inTouch;
     private float timerLeftWin;
     public float timeToWin;
-    public GameObject winPanel;
     private GameObject paperEffect;
 
     private bool showedWin = false;
@@ -20,7 +20,7 @@ public class Decider : MonoBehaviour
         lefted = false;
         inTouch = 0;
         timerLeftWin = timeToWin;
-        //winPanel.SetActive(false);
+
         //deviceAnimation.enabled = false;
     }
     void Update()
@@ -35,14 +35,15 @@ public class Decider : MonoBehaviour
             if (timerLeftWin <= 0 && !showedWin)
             {
                 showedWin = true;
-                Debug.LogWarning("WIN");
-                //winPanel.SetActive(true);
-                //PlayerPrefs.SetInt("level", SceneManager.GetActiveScene().buildIndex + 1);
+
+                UI_Level.Instance.Win();
+
                 Destroy(selecter); //prevent from click when win
                 paperEffect.SetActive(true);
                 //deviceAnimation.enabled = true;
-                //  Audiomanager.Instance.BgAudio.enabled = false;
-
+                AudioManager.Instance.PlaySFX("win");
+                AudioManager.Instance.StopBackgroundMusic();
+                
             }
         }
         else
